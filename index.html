@@ -13,12 +13,12 @@
             margin-top: 100px;
             margin-bottom: 50px;
         }
-        div {
+        /* div {
             display: flex;
             align-items: center;
             justify-content: center;
             height: 90vh;
-        }
+        } */
         div .convert {
             max-width: 80%;
             width: 250px;
@@ -32,6 +32,34 @@
         }
         table, th, td {
   border:1px solid black;
+}
+.step {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 50vh; 
+    background-color: rgb(46, 46, 106)
+}
+.send {
+    width: 250px; 
+    padding: 15px; 
+    border: 1px solid rgb(105, 105, 156); 
+    outline: none; 
+    border-radius: 8px;
+    margin-right: 8px;
+}
+.submit {
+    width: 150px;
+    padding: 15px ;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+.submit:hover {
+    background: none;
+    border: 1px solid #000;
 }
     </style>
 </head>
@@ -60,6 +88,13 @@
             
           </table>
       </div> -->
+      <!-- Step One -->
+       <!-- <div class="step">
+            <input type="text" placeholder="Enter Your Name" class="send">
+            <input type="submit" value="send" class="submit">
+       </div>
+       <div class="sendMessage" style="display: flex; flex-direction: column; align-items: center;">
+       </div> -->
     <script src="./index.js"></script>
 </body>
 </html>

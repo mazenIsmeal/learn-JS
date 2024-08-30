@@ -94,26 +94,26 @@
 
 
 
-function gravity_flip(columns) {
-    // write your code here
-    let n = columns.length;
+// function gravity_flip(columns) {
+//     // write your code here
+//     let n = columns.length;
 
-    for (let i = 0; i < n - 1; i++) {
-        if (columns[i] > columns[i + 1]) {
-            columns[i] = columns[i + 1];
-        }
-    }
+//     for (let i = 0; i < n - 1; i++) {
+//         if (columns[i] > columns[i + 1]) {
+//             columns[i] = columns[i + 1];
+//         }
+//     }
 
-    for (let i = n - 1; i > 0; i--) {
-        if (columns[i] < columns[i - 1]) {
-            columns[i - 1] = columns[i];
-        }
-    }
-    return columns
-}
-const inputCubes = [3, 1, 2, 4];
-const res = gravity_flip(inputCubes);
-console.log(res)
+//     for (let i = n - 1; i > 0; i--) {
+//         if (columns[i] < columns[i - 1]) {
+//             columns[i - 1] = columns[i];
+//         }
+//     }
+//     return columns
+// }
+// const inputCubes = [3, 1, 2, 4];
+// const res = gravity_flip(inputCubes);
+// console.log(res)
 
 // // Challenge Object
 // let students = [
@@ -178,38 +178,88 @@ console.log(res)
 // }
 
 // Challenge coderHub
-function countWords(txt) {
-    let count = txt.trim().split(/\s+/)
-    return count.length
-}
+// function countWords(txt) {
+//     let count = txt.trim().split(/\s+/)
+//     return count.length
+// }
 
-console.log(countWords('mazen ashraf ismeal'));
+// console.log(countWords('mazen ashraf ismeal'));
 
 
 // Challenge coderHub
-function addFive(arr) {
+// function addFive(arr) {
 
-    return arr.map((ele) => {
-        return (ele + '5').toString()
-    })
+//     return arr.map((ele) => {
+//         return (ele + '5').toString()
+//     })
     
-}
-let result = addFive(['mazen', 'ashraf', 'ismeal'])
-console.log(result)
+// }
+// let result = addFive(['mazen', 'ashraf', 'ismeal'])
+// console.log(result)
+
+// // Challenge coderHub
+// function stringContains(firstName, contains) {
+//     // write your code here
+//     return firstName.includes(contains)
+// }
+
+// console.log(stringContains('mazen', 'n'));
 
 // Challenge coderHub
-function stringContains(firstName, contains) {
-    // write your code here
-    return firstName.includes(contains)
-}
-
-console.log(stringContains('mazen', 'n'));
-
-// Challenge coderHub
-function date_format(date) {
-    // write your code here
-    let d = new Date();
-    console.log(d.getUTCDay());
+// function date_format(date) {
+//     // write your code here
+//     let d = new Date();
+//     // console.log();
     
-}
-date_format('10/2/2002')
+// }
+// date_format('10/2/2002')
+
+// challenge 
+// let input = document.querySelector('.send')
+// let submit = document.querySelector('.submit')
+// let step = document.querySelector('.step')
+// let sendMessage = document.querySelector('.sendMessage')
+
+// // First Function mouseovet in input
+// input.addEventListener('mouseout', function() {
+//     let createH3 = document.createElement('h3');
+//     let createFullH3 = document.createTextNode(this.value)
+//     createH3.appendChild(createFullH3)
+//     step.appendChild(createH3)
+// })
+
+// submit.addEventListener('click', function() {
+//     let value = input.value;
+//     let createH3 = document.createElement('h3');
+//     let createFullH3 = document.createTextNode(value)
+//     createH3.appendChild(createFullH3)
+//     sendMessage.appendChild(createH3)
+// })
+
+// function increasing_array(arr) {
+//     // write your code here
+//     let points = 0;
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] <= arr[i - 1]) {
+//             let diff = arr[i - 1] - arr[i] + 1;
+//             arr[i] += diff;
+//             points += diff;
+//         }
+//     }
+//     return points;
+// }
+// let arr = [3, 2, 1, 2, 3];
+// let points = increasing_array(arr);
+// console.log("Minimum points required: ", points);
+
+// function is_same(name1, name2) {
+//     // write your code here
+//         let formattedName1 = name1.trim().toLowerCase();
+//         let formattedName2 = name2.trim().toLowerCase();
+//         if (formattedName1 === formattedName2) {
+//             return 'متشابهين'
+//         } else {
+//             return 'غير متشابهين' 
+//         }
+// }
+// console.log(is_same('mazen', 'mazen'))
