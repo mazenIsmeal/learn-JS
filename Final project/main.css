@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --bgBody: #071952;
+    --colorFont: #180161;
+    --colorIcon: #4F1787;
+}
+
+body {
+    background-color: var(--bgBody);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.container .head {
+    background-color: var(--colorIcon);
+    width: 550px;
+    position: relative;
+    padding: 20px;
+}
+
+.container .head h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.container .head i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 3px;
+    font-size: 1.3rem;
+    color: var(--colorIcon);
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.container .list {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    background-color: #fff;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.container .list h2 {
+    font-size: 1.2rem;
+    color: var(--colorFont);
+}
+
+.container .list span, i {
+    font-size: 1rem;
+    color: var(--bgBody);
+}
+
+.container .list .icon {
+    margin: 10px 0;
+}
+
+.container .list .icon i {
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.popup_add, .popup_update {
+    position: absolute;
+    top: 50%;
+    width: 450px;
+    background-color: #fff;
+    color: var(--colorFont);
+    text-align: center;
+    height: 150px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.popup_add {
+    display: none;
+}
+
+.popup_update {
+    display: none;
+}
+
+.popup_add .head_popup, .popup_update .head_popup {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--colorIcon);
+    width: 100%;
+    padding: 10px;
+}
+
+.popup_add .head_popup h3, .popup_update .head_popup h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.popup_add .head_popup i, .popup_update .head_popup i {
+    font-size: 1.3rem;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup_add .sendTask, .popup_update .sendUpdate {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup_add .sendTask .addTask, .popup_update .sendUpdate .updateTask {
+    width: 60%;
+    margin: 10px 0;
+    padding: 10px;
+    outline: none;
+    
+}
+
+.popup_add .sendTask .addTask:active, .popup_update .sendUpdate .updateTask:active {
+    border: 1px solid var(--bgBody);
+}
+
+.popup_add .sendTask .send, .popup_update .sendUpdate .send {
+    width: 40%;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    background: none;
+    border: 1px solid var(--bgBody);
+    border-radius: 8px;
+    color: var(--colorFont);
+}
+
+.popup_add .sendTask .send:hover, .popup_update .sendUpdate .send:hover {
+    background-color: var(--colorFont);
+    color: #fff;
+    transition: 0.4s all ease;
+}
