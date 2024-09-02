@@ -58,6 +58,10 @@ body {
     cursor: pointer;
 }
 
+.done {
+    background-color: rgb(101, 207, 101) !important;
+}
+
 .container .list h2 {
     font-size: 1.2rem;
     color: var(--colorFont);
@@ -150,4 +154,17 @@ body {
     background-color: var(--colorFont);
     color: #fff;
     transition: 0.4s all ease;
+}
+
+/* res */
+@media(max-width: 570px) {
+    .head {
+        width: 309px !important;
+    }
+    .list {
+        width: 100% !important;
+    }
+    .popup_add, .popup_update {
+        width: 310px;
+    }
 }

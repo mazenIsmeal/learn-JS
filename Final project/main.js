@@ -36,7 +36,7 @@ let tasks = [
     {
         'title': 'ashraf',
         'date': '1/9/2024',
-        'isDone': false
+        'isDone': true
     },
     {
         'title': 'ismeal',
@@ -44,11 +44,23 @@ let tasks = [
         'isDone': false
     }
 ]
+// في حالة حذف localStorage
+function getTasksForStorage() {
+    // update Value array with localStorage
+    let reTasks = JSON.parse(localStorage.getItem('tasks'))
+    if (reTasks == null) {
+        tasks = []
+    } else {
+        tasks = reTasks
+    }
+}
+getTasksForStorage()
+
 function readTask() {
     let index = 0;
     for(task of tasks) {
         let readTask = `
-            <div class='list'>
+            <div class='list ${task.isDone? 'done' : ''}'>
                 <div class="title_list">
                     <h2>${task.title}</h2>
                     <i class="fa-solid fa-calendar-days"></i>
@@ -56,7 +68,11 @@ function readTask() {
                 </div>
                 <div class="icon">
                     <i class="fa-solid fa-trash" style="background-color: brown;" onclick='deleteTask(${index})'></i>
-                    <i class="fa-solid fa-check" style="background-color: green;"></i>
+                    ${task.isDone? `
+                            <i class="fa-solid fa-xmark" style="background-color: #ce3838;" onclick='isDoneTask(${index})'></i>
+                        ` : `
+                            <i class="fa-solid fa-check" style="background-color: green;" onclick='isDoneTask(${index})'></i>
+                        ` }
                     <i class="fa-solid fa-pen" style="background-color: blue;" onclick='openPopupUpdate(${index})' id="openPopuptUpdate"></i>
                 </div>
             </div>
@@ -82,6 +98,7 @@ submit.addEventListener('click', function() {
         'isDone': false
     }
     tasks.push(createTask);
+    storage()
     readTask()
     popup_add.style.display = 'none'
 })
@@ -94,6 +111,7 @@ function deleteTask(index) {
     let isConfirmed = confirm('Are You Sure Delete this Task: ' + task.title)
     if(isConfirmed) {
         tasks.splice(index, 1);
+        storage()
         readTask()
     } else {
         readTask()
@@ -112,8 +130,25 @@ function openPopupUpdate(index) {
     edit.addEventListener('click', function() {
         list.innerHTML = ''
         task.title = editTask.value
+        storage()
         readTask()
         popup_update.style.display = 'none'
     })
 }
 /* _________________ Function Update Task ___________________ */
+
+/* _________________ Function Is Done Task ___________________ */
+function isDoneTask(index) {
+    list.innerHTML = ''
+    let task = tasks[index]
+    task.isDone = !task.isDone
+    storage()
+    readTask()
+}
+/* _________________ Function Is Done Task ___________________ */
+/* _________________ STORAGE FUNCTION  ___________________ */
+function storage() {
+    // convert array tasks to string
+    let taskStr = JSON.stringify(tasks)
+    localStorage.setItem('tasks', taskStr)
+}
