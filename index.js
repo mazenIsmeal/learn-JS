@@ -401,3 +401,18 @@ console.log(nums.match(numsRe))
 let urls = 'https://www.google.com http://website.net web.io'
 let urlRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
 console.log(urls.match(urlRe));
+
+// Regular Expressions - Challenge
+let url1 = 'elzero.org';
+let url2 = 'http://elzero.org';
+let url3 = 'https://elzero.org';
+let url4 = 'https://www.elzero.org';
+let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+let re = /(https?:\/\/)?(www.)?\w+.org(:\w+\/\w+.php\?id=\w+&\w+=\w+)?/ig; // Write Your Pattern Here
+
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
