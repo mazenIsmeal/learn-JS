@@ -1,4 +1,4 @@
-// // challenge loop wiht array in js 
+
 // // step 2
 // let submitLoop = document.querySelector('.submit');
 // let arrStueaudent = ['mazen', 'ahmed', 'ali', 'hassen', 'ashraf', 'ismeal'];
@@ -263,3 +263,141 @@
 //         }
 // }
 // console.log(is_same('mazen', 'mazen'))
+
+// Destructuring Array js
+// let friends = ['mazen', 'ahmed', 'ashraf', ['ismeal', 'gamal', ['seaad', 'hany']]];
+
+// let [, , , [a, ,[, b]]] = friends
+
+// console.log(a); // ismeal
+// console.log(b); // hany
+
+// // Destructuring Object js
+// let person = {
+//     'myName': 'mazen',
+//     'myTitle': 'FrontEnd',
+//     'skills': ['html', 'css', 'js'],
+//     'myAge': 23,
+//     'addresses': {
+//         'one': 'egypt',
+//         'two': 'KSA'
+//     }
+// }
+
+// let {myName: n, myTitle: t, skills: [, , there], myAge, addresses: {one}} = person
+// console.log(n)
+// console.log(t)
+// console.log(there)
+// console.log(myAge)
+// console.log(one);
+
+// Challenge Destructuring
+// let chosen = 1;
+
+// let friends = [
+//     {title: 'mazen', age: 23, available: true, skills: ['html', 'css']},
+//     {title: 'Ahmed', age: 25, available: false, skills: ['html', 'css']},
+//     {title: 'seaad', age: 28, available: true, skills: ['php', 'mysql']},
+// ]
+
+// New Data Type Set
+
+let data = [1, 2, 3, 3, 3];
+let uniqueData = new Set(data) // syntax Set
+
+console.log(uniqueData.add(4)); // Add Item in Set 
+console.log(uniqueData.size); // Size in Set
+console.log(uniqueData.delete(4)) // Delete Item in Set
+console.log(uniqueData.has(1))
+
+// Challenge one Set
+let setOfNumbers = new Set([10]);
+setOfNumbers.add(20).add(2)
+console.log(setOfNumbers);
+console.log(setOfNumbers = 2);
+
+// Challenge two Set
+
+let myFriends = ["Osama", "Ahmed", "Sayed", "Sayed", "Mahmoud", "Osama"];
+console.log(new Set(myFriends.sort()))
+
+// Challenge Map
+let myInfo = {
+    username: "Osama",
+    role: "Admin",
+    country: "Egypt",
+  };
+
+let myMap = new Map();
+myMap.set('username' , "Osama")
+myMap.set('role' , "Admin")
+myMap.set('country' , "Egypt")
+
+console.log(myMap)
+console.log(myMap.size)
+console.log(myMap.has('role'))
+
+
+
+let locations = {
+  20: 'place 1',
+  30: 'place 2',
+  50: 'place 3',
+  40: 'place 4'
+}
+
+let mainLocation = 15;
+
+let locationArrayKeys = Object.keys(locations)
+console.log(locationArrayKeys);
+
+// convert array string to number
+let locationsArray = locationArrayKeys.map(function(n) {
+  return +n
+})
+
+console.log(locationsArray);
+
+let cheek = locationsArray.every(function(e) {
+  return e > this
+}, mainLocation)
+
+console.log(cheek)
+
+//  Map And Set Challenge
+
+let n1 = [10, 30, 10, 20];
+let n2 = [30, 20, 10];
+
+console.log([...n1, ...n2].length * Math.max(...n1)); // 210
+
+
+// let theNumber = 100020003000;
+// console.log(Array.from(theNumber))
+
+/*________________ RegEx ______________________*/
+let str = 'my name is mazen ashraf and i learn javaScript with elzero Web School Mazen'
+
+let regex = /mazen/;
+
+console.log(str.match(regex));
+
+let myString = 'abcedifAFSDVGRER123456789@#%^&*';
+let ids = 'com net org io'
+
+let idsRe = /(com|io)/g;
+console.log(ids.match(idsRe));
+let spacile = /[0-9]/g;
+console.log(myString.match(spacile))
+
+let mails = 'one@en.com mazen@gmail.io ismeal@yhaoo.net'
+let mailsRe = /\w+@\w+.(io|net)/ig;
+console.log(mails.match(mailsRe))
+
+let nums = '0110 10 150 05120 0560 350 00';
+let numsRe = /0\d*0/ig;
+console.log(nums.match(numsRe))
+
+let urls = 'https://www.google.com http://website.net web.io'
+let urlRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
+console.log(urls.match(urlRe));
