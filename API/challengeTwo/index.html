@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <title>Api Challenge</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container">
+        <div class="header">
+            <h1 class="title">القاهرة</h1>
+            <div class="dateAndCity">
+            <div class="date"></div>
+            <div class="city">
+                <select onclick="convertCity(value, this.options[this.selectedIndex].text)">
+                    <option value="cairo">القاهرة</option>
+                    <option value="alexandria">الاسكندرية</option>
+                </select>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <!-- Body -->
+    <div class="container">
+        <div class="mainBox">
+            <div class="box">
+                <h2>الفجر</h2>
+                <div class="time">
+                    <span>4.30 AM</span>
+                </div>
+            </div>
+            <div class="box">
+                <h2>الفجر</h2>
+                <div class="time">
+                    <span>4.30 AM</span>
+                </div>
+            </div>
+            <div class="box">
+                <h2>الفجر</h2>
+                <div class="time">
+                    <span>4.30 AM</span>
+                </div>
+            </div>
+            <div class="box">
+                <h2>الفجر</h2>
+                <div class="time">
+                    <span>4.30 AM</span>
+                </div>
+            </div>
+            <div class="box">
+                <h2>الفجر</h2>
+                <div class="time">
+                    <span>4.30 AM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Body -->
+    <script src="./main.js"></script>
+</body>
+</html>
